@@ -19,7 +19,9 @@ public class SpaceNeedle {
         //System.out.println();
         topUpperHalf();
         topLowerHalf();
-        System.out.println();
+        //System.out.println();
+        pillar();
+        topUpperHalf();
 
     }
 
@@ -42,29 +44,9 @@ public class SpaceNeedle {
         for (int lines = 0; lines < SIZE; lines++) {
             for (int i = SIZE * 3; i > 0; i--) {
                 System.out.print(" ");
-
             }
-
             System.out.println("||");
         }
-        //System.out.println();
-
-
-//        // Top Half
-//        System.out.print("|");
-//
-//
-//        // Middle
-//        System.out.print("|");
-//
-//        for (int i = 0; i < SIZE * 3; i++){
-//            System.out.print("\"");
-//        }
-//        System.out.print("|");
-//
-//
-//        //System.out.println("");
-
     }
 
     public static void topUpperHalf() {
@@ -94,19 +76,62 @@ public class SpaceNeedle {
     }
 
     public static void topLowerHalf(){
+        //System.out.println();
+
+        //System.out.println("\\_/\\/\\/\\/\\/\\/\\/\\/\\_/");
         System.out.println();
 
-        for (int line = 1; line <= SIZE; line++) {
-            System.out.print("\\_");
-            for (int space = 3*SIZE-1; space >= SIZE + 1; space-=2) {
+        //System.out.print("\\_");
+
+
+        for (int line = 0; line <= SIZE - 1; line++) {
+            //System.out.print("line"+ line);
+
+            for (int space = 1; space <= line * 2; space++) {
                 System.out.print(" ");
+            }
+            System.out.print("\\_");
+
+            for (int space = 8 - (line * 2); space >= 1; space--) {
+                System.out.print("/\\");
+                //System.out.print("space" + space);
 
             }
-            //System.out.println();
-            System.out.print("<>");
+
+            System.out.print("_/");
+            System.out.println();
 
         }
 
+
+
+
+
+
+    }
+
+    public static void pillar() {
+
+        for (int line = 1; line <= SIZE * 3; line++) {
+            for (int space = 0; space <= (SIZE * 2); space++) {
+                System.out.print(" ");
+            }
+
+            System.out.print("|");
+
+            for (int space = 1; space <= (SIZE / 2); space++) {
+                System.out.print("%");
+            }
+
+            System.out.print("||");
+
+            for (int space = 1; space <= (SIZE / 2); space++) {
+                System.out.print("%");
+            }
+
+            System.out.print("|");
+            System.out.println();
+        }
     }
 }
 
